@@ -1,0 +1,97 @@
+@use '@styles/sass-variables';
+
+.container {
+  perspective: 1000px;
+  margin: 100px auto;
+  width: 550px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial,
+    sans-serif;
+  user-select: none;
+
+  @media (max-width: sass-variables.$tablet-bp) {
+    perspective: unset;
+    margin: 50px auto;
+    width: 85%;
+  }
+}
+
+@media (min-width: sass-variables.$hover-bp) {
+  .container:hover .card {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.card {
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color);
+  padding: 20px;
+
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+
+  @media (max-width: sass-variables.$tablet-bp) {
+    transform-style: unset;
+  }
+}
+
+.cardAnimation {
+  animation: floatCard 8s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  20% {
+    transform: rotateX(5deg) rotateY(-7deg) translateZ(10px);
+    box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.3);
+  }
+  40% {
+    transform: rotateX(2deg) rotateY(6deg) translateZ(5px);
+    box-shadow: -5px 10px 25px rgba(0, 0, 0, 0.25);
+  }
+  60% {
+    transform: rotateX(-4deg) rotateY(2deg) translateZ(8px);
+    box-shadow: 3px 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  80% {
+    transform: rotateX(-2deg) rotateY(-5deg) translateZ(5px);
+    box-shadow: 5px 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.cardContent {
+  color: var(--text-color);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(20px);
+}
+
+.cardTitle {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+.cardInfoRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cardInfoRow > div {
+  flex: 1;
+}

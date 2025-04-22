@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(255, 255, 255);
+  --accent-color: #9ed2be;
+  --accent-color-hover: #9ed2be98;
+  --text-color: rgba(0, 0, 0, 0.9);
+  --text-color-secondary: rgba(255, 255, 255, 0.9);
+}

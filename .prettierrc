@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "all",
+  "singleAttributePerLine": false,
+  "htmlWhitespaceSensitivity": "css",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "tabWidth": 2,
+  "endOfLine": "auto"
+}
